@@ -1,7 +1,19 @@
+import Product from "./Product"
 
-function ProductFeed() {
+const ProductFeed = ({ products }) => {
   return (
-    <div>ProductFeed</div>
+    <div>
+        {products.map(({ id, title, price, description, category, image }) => (
+            <Product
+            key={id}
+            title={title}
+            price={price}
+            description={description}
+            category={category}
+            image={image}
+            />
+        ))}
+    </div>
   )
 }
 

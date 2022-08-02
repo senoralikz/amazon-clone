@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { MenuIcon, SearchIcon, ShoppingCartIcon } from '@heroicons/react/outline'
 
-function Header() {
+const Header = () => {
   return (
     <header>
       {/* Top nav */}
