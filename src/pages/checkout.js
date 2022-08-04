@@ -1,7 +1,11 @@
 import Image from "next/image"
+import { useSelector } from "react-redux"
 import Header from "../components/Header"
+import { selectItems } from "../slices/basketSlice"
+import CheckoutProduct from "../components/CheckoutProduct"
 
 const Checkout = () => {
+  const items = useSelector(selectItems)
   return (
     <div className="bg-gray-100">
         <Header />
@@ -12,7 +16,10 @@ const Checkout = () => {
                 <Image src='https://links.papareact.com/ikj' width={1020} height={250} objectFit='contain' />
 
                 <div className="flex flex-col p-5 space-y-10 bg-white">
-                    <h1 className="text-3xl border-b pb-4">Your Shopping Cart</h1>
+                    <h1 className="text-3xl border-b pb-4">{items.length === 0 ? 'Your Shopping Cart Is Empty' : 'Shopping Cart'}</h1>
+                    {items?.map((item, index) => (
+                      <CheckoutProduct key={index} id={item.id} title={item.title} price={item.price} description={item.description} rating={item.rating} category={item.category} image={item.image} hasPrime={item.hasPrime} />
+                    ))}
                 </div>
             </div>
 
