@@ -9,7 +9,17 @@ const CheckoutProduct = ({ id, title, price,description, rating, category, image
   const dispatch = useDispatch()
   
   const addItemToCart = () => {
+    const product = {
+        id, title, price,description, rating, category, image, hasPrime
+    }
 
+    // push item into redux store
+    dispatch(addToBasket(product))
+  }
+
+  const removeItemFromCart = () => {
+    // remove item from redux store
+    dispatch(removeFromBasket({ id }))
   }
 
   return (
@@ -31,8 +41,8 @@ const CheckoutProduct = ({ id, title, price,description, rating, category, image
         </div>
 
         <div className="flex flex-col space-y-2 my-auto justify-self-end">
-            <button className="button" onClick={addItemToCart}>Add to Cart</button>
-            <button className="button">Remove from Cart</button>
+            <button className="button" onClick={addItemToCart}>Add Another</button>
+            <button className="button" onClick={removeItemFromCart}>Remove from Cart</button>
         </div>
 
     </div>
