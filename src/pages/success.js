@@ -4,7 +4,7 @@ import { useRouter } from "next/router"
 
 const success = () => {
     const router = useRouter()
-    
+
   return (
     <div className="bg-gray-100 h-screen">
         <Header />
@@ -16,7 +16,7 @@ const success = () => {
                     <h1 className="text-3xl">Thank you, your order has been confirmed!</h1>
                 </div>
                 <p>Thank you for shopping with us. You will receive a confirmation email once your items have shipped. If you would like to check the status of your order please click below.</p>
-                <button className="button mt-8">Go to my orders</button>
+                <button onClick={() => router.push('/orders')} className="button mt-8">Go to my orders</button>
             </div>
 
         </main>
