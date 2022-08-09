@@ -29,7 +29,7 @@ const Header = () => {
 
         {/* Right side of search bar */}
         <div className='text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap'>
-          <div onClick={!session ? signIn : signOut} className='link'>
+          <div onClick={() => !session ? router.push('/signin') : signOut()} className='link'>
             <p>{session ? `Hello ${session.user.name}` : 'Sign In'}</p>
             <p className='font-extrabold md:text-sm'>Account & Lists</p>
           </div>
