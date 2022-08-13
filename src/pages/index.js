@@ -8,7 +8,7 @@ export default function Home({ products }) {
   return (
     <div className="bg-gray-100">
       <Head>
-        <title>Amazon Clone</title>
+        <title>Amazon2.0</title>
       </Head>
 
       {/* Header */}
