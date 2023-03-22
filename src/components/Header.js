@@ -25,7 +25,7 @@ const Header = () => {
                 <div className="mt-2 flex items-center flex-grow sm:flex-grow-0">
                     <Image
                         onClick={() => router.push("/")}
-                        src="https://imgur.com/lz0n3pA"
+                        src="https://i.imgur.com/lz0n3pA.png"
                         width={150}
                         height={40}
                         objectFit="contain"
